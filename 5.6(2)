@@ -1,0 +1,33 @@
+/*#include <stdio.h>
+int main(){
+int i=1; 
+while(i<10){        //循环条件。
+printf("%d",i);
+i++;
+}
+return 0;
+}
+#include <stdio.h>
+int main(){
+	int i=1;
+	while(i<10){
+		if(i==5)
+		continue;//当遇见满足continue的条件时，直接终止本次循环，返回最开始的判断条件处进行判断。
+		printf("%d",i);
+		i++;
+	}
+ 
+}//执行结果为1234
+*/
+#include <stdio.h>
+int main(){
+int i=1;
+while(i<10){
+i++;
+if(i==5)
+continue;
+printf("%d",i);
+}
+return 0;
+}
+ 
