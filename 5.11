@@ -1,0 +1,18 @@
+int main(){
+
+int ret =0;
+char password[20]={0};//预留出20个存储空间放在password里。 
+printf("请输入密码：");
+scanf("%s",password);//s的意思是输入的是一个字符串。 并存放在password中。注意数组首地址不需要&。
+getchar();//此处getchar的作用只是把那个\n给吸收，不需要再将收到的值放入新的地方了 
+printf("请确认Y/N:");
+ret=getchar();//上面不是有printf吗，之后要根据提示的内容输入Y/N这时候就要接收输入的字符，getchar（）一下，并放在ret里 
+if(ret=='Y'){//注意看==后面的内容，不能直接写y，否则系统会显示不认识这个字符。写成'Y'英文单引号加上曾经输入的内容。 
+	printf("确认成功");
+}
+ else
+{
+	printf("放弃确认");
+} 
+return 0 ;
+}
