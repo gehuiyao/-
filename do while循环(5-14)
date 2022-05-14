@@ -1,0 +1,42 @@
+// do while 循环 
+#include <stdio.h>
+int main(){
+	int i=1;
+	do{
+		printf("%d ",i);//do后面如果只加一条语句，可以省略大括号。 
+	     i++;
+	} 
+   while(i<10); 
+
+return 0;
+}//先进性一次循环之后再由条件判断是否继续尽行 
+//continue和break语句
+//（1）break语句
+#include <stdio.h>
+int main(){
+	int i=1;
+	do{
+		if(i==5){
+			break; //结束break所在循环体的整个循环
+		}
+		printf("%d ",i);//do后面如果只加一条语句，可以省略大括号。 
+	     i++;
+	} 
+   while(i<10); 
+
+return 0;
+//continue 语句
+#include <stdio.h>
+int main(){
+	int i=1;
+	do{
+		if(i==5){
+		continue ; //满足条件时结束本次循环，所以跳过的是printf和I++，但是I的值本身并未发生改变，所以会一直进行循环，结果为1234死循环
+		}
+		printf("%d ",i);
+	     i++;
+	} 
+   while(i<10); 
+
+return 0;
+}//先进性一次循环之后再由条件判断是否继续尽行 
