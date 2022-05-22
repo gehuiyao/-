@@ -1,0 +1,14 @@
+public class Demo{//Demo是类名，可以按照规则任意取，由数字0-9，字母A-Z ,a-z，美元符号，人民币符号。或者下划线_组成。
+/*规则：
+数字不能开头 
+不可以使用关键字
+要严格区分大小写
+*/
+    public static void main(String[] args){
+	System.out.println("hehealla");
+	}
+	int day=24;
+	//数字不能开头int 1day =23;
+	//ctrl+f6编译运行
+    
+}//
