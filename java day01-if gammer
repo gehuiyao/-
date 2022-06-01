@@ -1,0 +1,21 @@
+/if语句
+/*if(判断语句){
+    执行内容
+        }
+        */
+
+import java.util.Scanner;
+
+public class demo02 {
+    public static void main(String[] args) {
+        Scanner scanner =new Scanner(System.in);
+        System.out.println("请输入一个数字");
+        int a= scanner.nextInt();
+        if(a<=16){
+            System.out.println("太小颗 ");
+        }
+        else{
+            System.out.println("太大了");
+        }
+    }
+}
