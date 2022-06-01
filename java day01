@@ -1,0 +1,26 @@
+//表示该类是在day3.demo1包下
+package day3.demo;
+
+
+import java.util.Scanner;
+
+public class demo1 {
+    public static void main(String[] args) {
+        //Scanner后面空格一下，ctrl+sift+空格，系统会自动帮助我们起名字
+        //new后面空格一下，再次按照前面的ctrl+shift+空格又可以自动补齐后面的内容
+        //光标位置可以由上述快捷键改变到下一行，甚至可以帮助自动补齐分号
+        Scanner scanner = new Scanner(System.in);
+        //快捷生成输出语句
+        System.out.println("请输入第一个数");
+        //复制粘贴的快速方式，Ctrl+D可以直接实现粘贴
+        //ctrl+shift+上/下，移动一行
+        int a = scanner.nextInt();//用于接收一个数放到a里面
+        System.out.println("请输入第二个数");
+        int b = scanner.nextInt();//用于接收一个数放到a里面
+        System.out.println("运行结果："+(a+b));
+        //格式化代码ctrl+alt+l
+
+
+
+    }
+}
