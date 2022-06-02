@@ -1,0 +1,28 @@
+public class demo06 {
+    public static void main(String[] args) {
+        Random r = new Random();
+        int num = r.nextInt(100);
+        //定义整型num接收产生的随机数r
+        Scanner sc = new Scanner(System.in);
+
+        //定义inputNum接收键盘录入的数字
+        while (true) {
+            System.out.println("请输入：");
+            int inputNum = sc.nextInt();
+            if (num == inputNum) {
+                System.out.println("猜对了");
+                break;
+                //注意break的位置。只有将break意思是跳
+                //出本次循环，只有放到猜对了的后面才能得到正确结果。
+                //最初放到文末，结果每一次一猜小了就会退出循环！！
+            } else if (num < inputNum) {
+                System.out.println("猜大了");
+
+            } else {
+                System.out.println("猜小了");
+
+            }
+
+        }
+    }
+}
