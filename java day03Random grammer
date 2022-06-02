@@ -1,0 +1,17 @@
+
+import java.util.Random;
+
+//随机数类
+public class demo05 {
+    public static void main(String[] args) {
+        Random r = new Random();
+        //此句创建对象r用于产生随机数
+        int num = r.nextInt(100) + 1;
+        //定义一个整型num，接收产生的随机数，注意后面有个+1
+        System.out.println(num);
+        double num2=r.nextDouble();
+        //前面已经进行过对像创建，此处不需要再次创建
+        //此前类型为int，这里创建小数类型num2，接收随机数
+        System.out.println(num2);
+    }
+}
