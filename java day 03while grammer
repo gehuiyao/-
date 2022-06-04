@@ -1,0 +1,28 @@
+package day3.demo1;
+//while循环
+public class demo07 {
+//    public static void main(String[] args) {
+//        int a=1;
+//        while (a<=4){//判断条件是否成立
+//            System.out.println(a);
+//            a++;
+//
+//        }
+//        System.out.println(a);
+//    }
+//}
+//do while 循环，先进行一次执行，再判断是否继续执行
+public static void main(String[] args) {
+    int x=1;
+    do {
+        System.out.println(x);
+        x++;
+    }
+    while(x<=4);
+    //注意do-while 语句的语法个格式，while（判断条件）；
+    //后面是；而且while后面的括号里紧跟的是判断条。首次执行
+    //的内容和判断条件后执行的内容均为do后面的语句
+
+    }
+
+    }
