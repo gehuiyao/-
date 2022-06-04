@@ -1,0 +1,19 @@
+public static void main(String[]args){
+Random r=new Random;
+//产生一个随机数
+int num=r.nextInt(100)+1;//将产生的随机数放到定义的num内
+Scanner sc=new Scanner(System.in);//键盘录入一个数放到Sc内
+int inputnumber;
+do {
+System.out.printl("请输入")；
+inputnumber =sc.nextInt();
+//赋值语句
+if（inputnumber<num）{
+System.out.printl("小了")；}
+else if（inputnumber>num）{
+System.out.println("大了");}
+}
+while （inputnumber=num）{
+System.out.println("猜对了");}
+}
+
