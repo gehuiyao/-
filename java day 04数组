@@ -1,0 +1,30 @@
+//数组
+//确定元素类型
+//int []  数组名= new int[数组长度]
+public class demo01 {
+    public static void main(String[] args) {
+//        double arr1[] = new double[5];
+//        //int/double :数据类型   【】表示是一个数组
+//        // arrs:数组名    5：数组长度
+//     double a1=arr1[0];
+//        System.out.println(a1);
+//    }
+//}
+//        String[] arr3 = new String[5];
+//        //构造一个带参数的字符串数组，数组长度为5
+//        String s1 = arr3[0];
+//        //赋值语句，定义一个string类型名为s1的变量，将arr3中的值赋值给她
+//        System.out.println("s1[0]=" + s1);
+//    }}
+        //输出结果为null，表示变量不引用任何对象。
+        //string 意思是封装字符串，包括带参数和不带参数
+        //String str1 =new String ();不带参数构造
+        //String str2=new String ("abcd");带参数构造
+        //静态初始化
+        int[] arr = new int[]{1, 2, 3, 4};
+        int a1 = arr[0];
+        int a4 = arr[3];
+        System.out.println(a1);
+        System.out.println(a4);
+    }
+}
