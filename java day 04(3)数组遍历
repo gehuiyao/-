@@ -1,0 +1,11 @@
+
+public class demo03_遍历数组 {
+    public static void main(String[] args) {
+        int []arr=new int[]{1,3,4,5};
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("数组第arr["+i+"]="+arr[i]);
+            //在arr[]括号里面进行显示“+？+”，显示arr[?]格式如此
+            
+        }
+    }
+}
