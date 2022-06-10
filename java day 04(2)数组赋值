@@ -1,0 +1,30 @@
+//数组的赋值
+public class demo02_赋值 {
+    public static void main(String[] args) {
+//        int []arr=new  int []{1,2,3,4};//未定义长度
+//        //数据类型【】数据名  =new  数据类型[]{}
+//        int a4=arr[3];
+//        int a1=arr[0];
+//        System.out.println(a1);
+//        System.out.println(a4);
+//        //使用数组的属性获取数组的大小
+//        System.out.println("数组的长度："+arr.length);
+//        //此语句用于求数组名为arr的数组的长度
+//        int a5=arr[arr.length-1];
+//        System.out.println("最后一个元素是"+a5);
+//        //数组的长度减一就是最后一个元素的下标
+//    }
+//
+//
+//}
+//以上为数组的静态初始化
+        int[] arr = new int[5];
+        arr[0] = 1;
+        //自习看里面的表达形式，数组名【数组位置】=赋值
+        //不带int！！！！！！！！！！！！！！！！
+        System.out.println(arr[0]);
+        arr [arr.length-1]=9999;
+        //意思是将数组最后一个元素赋值为9999
+        System.out.println(arr[arr.length-1]);
+    }
+}
