@@ -1,0 +1,37 @@
+public class demo08多态案例2 {
+    public static void main(String[] args) {
+        person p=new student();
+        p.eat();//学生的吃
+        //student stu1=(student) p;//将一个类型转换成另一个，转换成什么就什么在前面
+        //注意，前半部分写转换后的变量名需要重写一个！！！！
+        //stu1.study();
+        person p1=new teacher();
+        p1.eat();//老师吃
+        teacher t1=(teacher) p1;//啊啊啊我的妈呀，
+        //你这么从右往左读：将P1转化为teacher类型的t1
+        t1.teach();
+    }
+}
+class person{
+    public  void eat(){
+        System.out.println("人吃饭");
+    }
+}
+class student extends person{
+    @Override
+    public void eat() {
+        System.out.println("学生吃米饭");
+    }
+    public void study(){
+        System.out.println("学生学习");
+    }
+}
+class teacher extends person{
+    @Override
+    public void eat() {
+        System.out.println("老师吃黄焖鸡");
+    }
+    public void teach(){
+        System.out.println("授课");
+    }
+}
