@@ -1,0 +1,29 @@
+public class demo05多态转型 {
+    public static void main(String[] args) {
+//        fu6 f=new zi6();
+//        //向下转型：将f转为子类类型
+//        zi6 z=(zi6) f;
+//        //老子变成儿子，老子前面加个括号在最后
+//        //子类类型  变量名=（子类类型）父类类型
+//        System.out.println(f.num);
+//    }
+//}
+        //多态转型异常
+        fu6 f=new zi6();//多态代码
+        //zi7 zi=(zi7) f;//将fu6强行转换成zi7
+        //zi6 cannot be cast to day8.zi7；类型转换异常
+        //转换之前先判断类型、
+        if(f instanceof zi6){
+            zi6 zi=(zi6)f;
+            System.out.println("fu6对应的是zi6");
+        }
+    }
+}
+class fu6{
+int num=1; }
+class zi6 extends fu6{
+    int num=1;
+}
+class zi7 extends fu6{
+    int num=1;
+}
