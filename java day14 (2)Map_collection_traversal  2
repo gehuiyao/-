@@ -1,0 +1,21 @@
+//运用Map<k,y> Entry方法。
+public class demo02_Map_collection_traversal_2 {
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        map.put("111", "aaa");
+        map.put("222", "bbb");
+        map.put("333", "ccc");
+        map.put("444", "ddd");
+        //遍历，使用键值对象。
+        //Map.Entry<K,V>;封装了键值对的数据
+        //1，获取所有的键值对
+        Set<Map.Entry<String, String>> entrySet = map.entrySet();
+        // Set<Map.Entry<String, String>> entrySet1 = map.entrySet();ctrl+v自动生成。
+        //2.遍历set集合，获取所有的键值对象,.getKey();获取键
+        for(Map.Entry<String, String> entr : entrySet) {
+          String key=entr.getKey();//获取值
+          String value=entr.getValue();//获取值
+          System.out.println("k=  "+key+"   value=  "+value);
+        }
+    }
+}
