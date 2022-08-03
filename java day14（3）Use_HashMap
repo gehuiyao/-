@@ -1,0 +1,47 @@
+//当自定义对象作为key时，必须重写hashcode和equals方法。
+//HashMap的使用，用来存储自定义键值，自定义对象作为key
+public class demo03_Use_HashMap {
+    public static void main(String[] args) {
+        //key是唯一的
+        HashMap<Student,String>hashMap=new HashMap<>();
+        //创建了一个stude类，使用的时候，直接New 类名（传参），就很方便
+        hashMap.put(new Student("李四" ,19),"aaa");
+        hashMap.put(new Student("王五" ,19),"bbb");
+        hashMap.put(new Student("赵六" ,19),"ccc");
+        hashMap.put(new Student("赵六" ,19),"ddd");
+        //实现了没有顺序的输出了里面的内容
+        System.out.println("HashMap:"+hashMap);
+    }
+}
+class Student{
+    private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+//前面有两个重复的，为了保值键值和键的唯一指向性，必须重写hashcode和equals方法，
+    //重写后就可以自定删除重复的
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
+    }
+}
