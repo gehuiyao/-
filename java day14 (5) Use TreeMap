@@ -1,0 +1,15 @@
+//TreeMapde的使用
+//两个Map都是二叉树的原理保证键的唯一
+public class demo04_Use_TreeMap {
+    public static void main(String[] args) {
+        TreeMap<String,String>treeMap=new TreeMap<>();
+        treeMap.put("jf03","aaa");
+        treeMap.put("jf02","aaa");
+        treeMap.put("jf01","aaa");
+        treeMap.put("jf04","aaa");
+        System.out.println("treeMap"+treeMap);
+        //存入排序无序，输出直接排序。输出有序。
+        //string实现了comparabl接口，所以可以排序
+
+    }
+}
