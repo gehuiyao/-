@@ -1,0 +1,22 @@
+//Collection集合工具类的使用
+public class demo12_Use_collection_tool_class {
+    public static void main(String[] args) {
+        ArrayList<String>ss=new ArrayList<>();
+        ss.add("aaaa");
+        ss.add("bbbb");
+        ss.add("cccc");
+        ss.add("ddd");
+        ss.add("aaaa");
+        //对Arrylist 进行排序。
+        System.out.println("排序前："+ss);
+        //集合存储元排序
+        Collections.sort(ss);
+        System.out.println("排序后："+ss);
+        //集合存储元素打散，每一次还都不一样。
+        Collections.shuffle(ss);
+        System.out.println("打乱后："+ss);
+        //集合反转
+        Collections.reverse(ss);
+        System.out.println("反转后:"+ss);
+    }
+}
