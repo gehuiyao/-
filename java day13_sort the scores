@@ -1,0 +1,87 @@
+
+//键盘录入学生信息按照总分排序，（1）有个学生对象
+public class demo11_Sort_the_scores {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        //把所有学生的信息都存到一个集合里面
+        //按照总分进行排序。
+      new Comparator<Student2>(){
+          @Override
+          public int compare(Student2 o1, Student2 o2) {
+              int i1=o1.getSunm()- o2.getSunm();
+              //总成绩相同，按照语文成绩排序。
+             int i2= (i1==0)? o1.getChinese()- o2.getChinese():i1;
+             //语文和总成绩都相同，按照数学排序。
+              int i3=(i2==0)? o1.getMath()-o2.getMath():i2;
+              return i3;
+          }
+      };
+        TreeSet<Student2> ss=new TreeSet<>();
+        for (int i = 0; i < 3; i++) {
+            System.out.println("请输入第"+(i+1)+"个学生的信息");
+            System.out.println("请输入姓名");
+            String name=sc.next();
+            System.out.println("请输入语文成绩");
+            int chinese=sc.nextInt();
+            System.out.println("请输入数学成绩");
+            int math=sc.nextInt();
+            System.out.println("请输入英语成绩");
+            int english=sc.nextInt();
+            //封装对象，后面就是一些列构造方法，getset，tostring
+            //每一次都新建一个对象了
+            Student2 s = new Student2(name,chinese,math,  english);
+            ss.add(s);
+        }
+        System.out.println(ss);
+}
+}
+ class Student2{
+    private String name;
+    private int chinese;//语文成绩
+      private int math;//数学成绩
+     private int english;//英文成绩
+//构造方法
+     public Student2(String name, int chinese, int math, int english) {
+         this.name = name;
+         this.chinese = chinese;
+         this.math = math;
+         this.english = english;
+     }
+     //提供获取总分的方法
+     public int getSunm(){
+         return chinese+math+english;
+     }
+     public String getName() {
+         return name;
+     }
+     public void setName(String name) {
+         this.name = name;
+     }
+     public int getChinese() {
+         return chinese;
+     }
+     public void setChinese(int chinese) {
+         this.chinese = chinese;
+     }
+     public int getMath() {
+         return math;
+     }
+     public void setMath(int math) {
+         this.math = math;
+     }
+     public int getEnglish() {
+         return english;
+     }
+     public void setEnglish(int english) {
+         this.english = english;
+     }
+     @Override
+     public String toString() {
+         return "Student2{" +
+                 "name='" + name + '\'' +
+                 ", chinese=" + chinese +
+                 ", math=" + math +
+                 ", english=" + english +
+                 '}';
+     }
+ }
