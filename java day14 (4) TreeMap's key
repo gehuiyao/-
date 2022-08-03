@@ -1,0 +1,58 @@
+//如果一个类的对象要想支持排序，就必须实现comperable接口，不然计算机不知道按照什么样的规则排序
+//或者是通过构造方法传入比较器
+//自定义对象作为treemap的key
+public class demo04_TEXT {
+    public static void main(String[] args) {
+        TreeMap <teacher,String> treeMap=new TreeMap<>(new Comparator<teacher>() {
+            @Override
+            public int compare(teacher o1, teacher o2) {
+                //用年龄比较的话就只输出一个对象了
+                //TODO 判断有问题，年龄相同就会覆盖
+                return o1.getAge()-o2.getAge();//计算返回值，
+            }
+        });
+        //代码拆分：大框架是一个集合，需要填入键和键值，其中一个键是由匿名内部类直接写的
+        //匿名内部类里面有两个参数，分别填入姓名和年龄
+        //在填入键值
+         treeMap.put(new teacher("李四",56),"aaa");
+         treeMap.put(new teacher("王五",56),"bbb");
+         treeMap.put(new teacher("赵六",56),"ccc");
+        System.out.println("treeMap:"+treeMap);//此时报错，
+
+
+    }
+}
+//自定义一个teacher类
+class teacher{
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    private String name;
+    private int age;
+//构造方法
+    public teacher(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "teacher{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
