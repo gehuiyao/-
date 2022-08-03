@@ -1,0 +1,21 @@
+//Map接口概述
+public class demo01_Map_interface {
+    public static void main(String[] args) {
+        //Map<k,v>:k:键 v:值
+        Map<String,String>  map=new HashMap<>();
+        //往Map里面存值,返回的是之前的值,null
+       // map.put("qqq","111");
+        //第一个输出结果是null
+        System.out.println(map.put("qqq","111"));
+        //第二个输出结果是上一个的值“111”
+        System.out.println(map.put("qqq","111"));
+        map.put("ppp","222");
+        //获取值,v get(object key)根据建获取值,没有就返回null
+        String value=map.get("ppp");
+        System.out.println("获取到的值"+value);
+        //删除指定key 的值V remove（object key）
+        System.out.println("删除前的值"+map);
+        System.out.println("删除指定的key:"+map.remove("ppp"));
+        System.out.println(map);
+    }
+}
