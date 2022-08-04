@@ -1,0 +1,41 @@
+**adkjahsadh
+ * 输出每个字符出现的次数这种
+ * 1.利用TreeMap key唯一的特性。
+ * 2.循环获取每一个字符，根据获取到的字符作为Key从Map中取值
+ *3.如果为null，表示之前没有存过值
+ * 如果不为null，表示之前存过值了，值++；
+ *
+ */
+public class demo05_Times_the_string_appears {
+    public static void main(String[] args) {
+        String s = "aaabbbdcdsdcccyyy";
+        TreeMap<Character, Integer> treeMap = new TreeMap<>();
+        //为什么用Character呢，因为char是一个基本数据类型不是一个类类型，不能放入<>
+        //里面，此时需要用char的包装类类型
+        for (int i = 0; i < s.length(); i++) {
+            //主要是将内容放到Treemap里面
+            char c = s.charAt(i);//获取到i的值，遍历该字符串
+            System.out.println("字符串遍历后："+c);
+            Integer value = treeMap.get(c);//将i的值放入treeMap中便，于用键进行查找
+            if (value != null) {
+                //之前存过值，value++,计算的数目+1
+                value++;
+                treeMap.put(c,value);//重写Treemap,把刚才计算出来的每个字母和次数放到一个新的
+                //集合里面
+            }else{
+                //因为只出现过一次，所以直接输出1
+                treeMap.put(c,1);
+            }
+        }
+        StringBuffer sb=new StringBuffer();
+        System.out.println(treeMap);
+        Set<Character> keyset=treeMap.keySet();
+        //看一下输出的格式
+        for (Character key:keyset) {
+            sb.append(key).append("(").append(treeMap.get(key)).append(")     ");
+            //append(treeMap.get(key))意思是获取对应key下面的键值
+        }
+        System.out.println(sb.toString());
+
+    }
+}
