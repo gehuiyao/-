@@ -1,0 +1,45 @@
+/****一班
+ *    jf001  李四
+ *    jf002  张三
+ *    jf003  王五
+ * 二班
+ *    jf001  赵六
+ *    jf002  田七
+ */
+public class demo07_Arraylist_HashMap_ {
+    public static void main(String[] args) {
+            //存2107的学生信息。
+            HashMap<String, String> hashMap17 = new HashMap<>();
+            hashMap17.put("jf001", "刘德华");
+            hashMap17.put("jf002", "张学友");
+            hashMap17.put("jf003", "黎明");
+            HashMap<String, String> hashMap16 = new HashMap<>();
+            //存入2017和2016班级学生的信息
+            hashMap16.put("jf001", "小红");
+            hashMap16.put("jf002", "小明");
+            hashMap16.put("jf003", "小白");
+            //创建ArrayList集合
+        ArrayList<HashMap<String,String>> list=new ArrayList<>();
+        list.add(hashMap16);
+        list.add(hashMap17);
+        System.out.println(list);//一个集合里面哟两个大块分别装着17级和16级所有成分
+        for (int i = 0; i < list.size(); i++) {
+            HashMap<String, String> hashMap1 = list.get(i);
+            HashMap<String, String> hashMap = hashMap1;
+            //遍历hashMap,获取键值对
+           Set<Map.Entry<String,String>>entryset= hashMap.entrySet();
+           for(Map.Entry<String,String> entry:entryset){
+               System.out.println(entry.getKey()+"   "+entry.getKey());
+           }
+        }
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
+        for (HashMap<String, String> hashMap : list) {
+            Set<Map.Entry<String,String>> entryset=hashMap.entrySet();
+            for (Map.Entry<String, String> entry : entryset) {
+                System.out.println(entry.getKey()+"   "+entry.getValue());
+
+            }
+
+        }
+    }
+}
