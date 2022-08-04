@@ -1,0 +1,56 @@
+/**2107级
+ *    jf001  李四
+ *    jf002  张三
+ *    jf003  王五
+ * 2016级
+ *    jf001  赵六
+ *    jf002  田七
+ */
+public class demo06_Map_Map {
+    public static void main(String[] args) {
+        //存2107的学生信息。
+        HashMap<String, String> hashMap17 = new HashMap<>();
+        hashMap17.put("jf001", "刘德华");
+        hashMap17.put("jf002", "张学友");
+        hashMap17.put("jf003", "黎明");
+        HashMap<String, String> hashMap16 = new HashMap<>();
+        //存入2017和2016班级学生的信息
+        hashMap16.put("jf001", "小红");
+        hashMap16.put("jf002", "小明");
+        hashMap16.put("jf003", "小白");
+        //将班级，班级里的人编号和姓名，分别作为键和值放入，因为编号姓名本身存储在hashmape中，所以嵌套
+        HashMap<String, HashMap<String, String>> allHashMap = new HashMap<>();
+        //将两个大块分别放进去
+        allHashMap.put("2017", hashMap17);
+        allHashMap.put("2016", hashMap16);
+        //年级一样但是编号还有姓名不一样，需要遍历输出allHashMap
+        //（1）键找值
+        Set<String> keyset = allHashMap.keySet();//将allHashMap中的键放到keyset 集合当中。
+        System.out.println("keyset" + keyset);//2017 2016
+
+        for (String y : keyset) {//遍历的是keyset，里面存放的是年级2016 2017
+            HashMap<String, String> chid = allHashMap.get(y);//获取值，是班级小团队，放child集合中
+            Set<String> childSet = chid.keySet();//获取学好姓名里面的学号，（小集合里面的键）
+            for (String chilekey : childSet) {//遍历姓名学号集合里面的键，获取学好
+                System.out.println("childkey   " + chilekey + "          childvalue  " + chid.get(chilekey));
+                //chid.get(chilekey) child 是班级小团队，<学号  姓名>，键集合是childset，get（键）《表示获得键对应的值
+            }
+
+        }//键找值
+        System.out.println("--------------------------------------------------------------");
+        //利用键值对遍历
+        Set<Map.Entry<String, HashMap<String, String>>> entryset = allHashMap.entrySet();
+        for (Map.Entry<String, HashMap<String, String>> entry : entryset) {
+            String key = entry.getKey();//key=年级
+            HashMap<String, String> value = entry.getValue();//value=学号  姓名
+            //注意此时变量类型是HashMap<String,String>，不是string
+            //你要遍历的是value，这是遍历的对象，它的变量类型是Map.Entry<string ,string >
+            //要遍历的内容是这个集合value里面的键值对
+            for (Map.Entry<String, String> value2 : value.entrySet()) {
+                String valuekey=value2.getKey();//获取班级集合里面的键和值
+                String value_valud=value2.getValue();
+                System.out.println("valuekey:"+value2.getKey()+"      value_valud:"+value2.getValue());
+            }
+        }
+    }
+}
