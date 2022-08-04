@@ -1,0 +1,16 @@
+//异常处理
+/**现阶遇见的异常
+ *JVM（Java虚拟机）遇到异常后的处理方式
+ * （1）确定异常的类型，到类库中实例化一个该类型的对象
+ * （2）看程序员（代码中）是否捕获此异常
+ * （3）没有捕获：将异常信息直接打印到控制台中
+ *         捕获：程序员处理
+ */
+public class demo01_Exception_handling {
+
+    public static void main(String[] args) {
+       // ArithmeticException: / by zero  除0异常
+        // NullPointerException 空指针异常
+        //ArrayIndexOutOfBoundsExceptionj角标越界异常
+    }
+}
