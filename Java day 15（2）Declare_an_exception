@@ -1,0 +1,14 @@
+//声明异常
+public class demo02_Declare_an_exception {
+    public static void main(String[] args) throws ParseException{
+     m1();
+    }
+    /**parse抛出了异常，有时候我们不想处理
+     *throws关键字抛出此异常， 让调用者来处理此异常。
+     */
+    public  static void m1()throws ParseException {
+        String date="2022年8月4日";
+        DateFormat df=new SimpleDateFormat();//SimpleDateFormat用于自定义格式输出日期的样式
+        df.parse(date);
+    }
+}
