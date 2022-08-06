@@ -1,0 +1,23 @@
+//File获取功能
+public class demo13_File_Get {
+    public static void main(String[] args) {
+        File file1=new File("E:\\java\\Day15\\录屏");
+        //获取文件的名称
+        file1.getName();
+        System.out.println("获取文件名称："+file1.getName());
+        //获取文件的路径
+        System.out.println("获取文件路径"+file1.getPath());
+        //获取抽象路径
+        System.out.println("抽象路径："+file1.getAbsolutePath());
+        //获取文件大小
+        System.out.println("获取文件大小："+file1.length());
+        //获取最后修改的时间
+        System.out.println("最后修改的时间："+file1.lastModified());
+        Date date=new Date(file1.lastModified());//创建对象
+        System.out.println(date.toLocaleString());//下面是替代版
+        //背住吧
+        SimpleDateFormat s=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+       String dateSter= s.format(date);//把 date格式化并接收
+        System.out.println(dateSter);
+    }
+}
