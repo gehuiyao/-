@@ -1,0 +1,12 @@
+//快捷键自动生成异常处理代码
+public class demo09_Exceptions_are_generated_quickly {
+    public static void main(String[] args) {
+        String s = null;
+        //选中整行代码，Ctrl+alt+t，选择就行
+        try {
+            System.out.println(s.length());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
