@@ -1,0 +1,17 @@
+//多catch
+public class demo04_Catch_exception_2 {
+    public static void main(String[] args) {
+        String s=null;
+        int []arr={1,2};
+        try{
+            System.out.println(arr[10]);//数组越界异常
+            System.out.println(s.length());//空指针异常
+        }catch (NullPointerException e){
+            System.out.println("发生了空指针");
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("发生了越界异常");
+        }
+        System.out.println("程序结束！");
+    }
+}
+//那个异常在try里面的第一个，就会输出哪个异常，但是只会输出一个，改变一下顺序就可以出现另一个
