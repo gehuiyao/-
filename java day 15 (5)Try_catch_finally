@@ -1,0 +1,15 @@
+//Try_catch_finally捕获异常
+public class demo05_Try_catch_finally {
+    public static void main(String[] args) {
+        String s="aaa";
+        try{
+            System.out.println(s.length());
+        }catch (NullPointerException e){
+            System.out.println("发生了空指针");
+        }
+        finally {
+            System.out.println("我无论咋样都会执行 ");
+        }
+        System.out.println("程序结束！");
+    }
+}
