@@ -1,0 +1,14 @@
+//JDK7处理异常的方式
+public class demo06_JDK7_deal_with_exception {
+    public static void main(String[] args) {
+        String s = null;
+        int arr[]={1,2};
+        try {
+            System.out.println(s.length());
+            System.out.println(arr[10]);
+        } catch (NullPointerException |ArrayIndexOutOfBoundsException e) {
+            System.out.println("发生了异常");
+        }
+        System.out.println("程序结束");
+    }
+}
