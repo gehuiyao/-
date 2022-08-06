@@ -1,0 +1,11 @@
+/**自定义异常
+ * 1.新建类
+ * 2.继承异常类RuntimeException
+ *3.提供构造方法，传递异常信息。
+ */
+public class demo10_AgeException extends RuntimeException{
+    public demo10_AgeException(String msg){
+        //用super关键字调用父类特有的msg方法
+        super(msg);
+    }
+}
