@@ -1,0 +1,31 @@
+**1.新建类
+ * 2.继承异常类
+ * 3.提供构造方法，传递异常信息。
+ */
+    public class deom10_Custom_exceptions  {
+    public static void main(String[] args) {
+        student s= new student();
+        s.setAge(10000);
+    }
+}
+class  student {
+    String name;
+    int age;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        //如果年龄不合法，抛出异常
+        if(age<0||age>150){
+       demo10_AgeException e=new demo10_AgeException("年龄不合法");
+       throw  e;
+        }
+        this.age = age;
+    }
+}
