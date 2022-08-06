@@ -1,0 +1,8 @@
+//fill类构造方法
+public class demo11_File_class {
+    public static void main(String[] args) {
+        //file可以表示目录或者文件
+        File file1=new File("E:\\java\\Day15\\录屏");
+        File file2=new File(file1,"a.png");//结果相当于拼接：E:\java\Day15\录屏\a.png
+    }
+}
