@@ -1,0 +1,22 @@
+//throwable常用方法
+public class demo08_Use_throwable {
+    public static void main(String[] args) {
+        String s=null;
+        try {
+            System.out.println(s.length());
+        }catch (NullPointerException e){
+           String msg= e.getMessage();
+            System.out.println("msg="+msg);
+            //e.getMessage()表示打印异常信息。
+            String toString=e.toString();
+            System.out.println("toString="+toString);
+            //e.toString表示打印完整的类名。
+            System.out.println("=================================");
+            e.printStackTrace();
+            //e.printStackTrace();表示打印异常堆栈信息。不需要赋值接收和输出
+            //直接自动打印
+            System.out.println("===================================");
+            System.out.println("空指针");
+        }
+    }
+}
