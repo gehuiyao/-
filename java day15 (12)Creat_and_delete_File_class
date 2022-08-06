@@ -1,0 +1,23 @@
+public class demo12_Creat_and_delete_File_class {
+    public static void main(String[] args) throws IOException {
+//        //当前项目的根目录下创建
+//        File file=new File("demo1.TEXT");
+//        //创建文件creatNewFile(),返回是否创建成功
+//        System.out.println("创建文件"+file.createNewFile());
+//        //创建文件夹
+//        File file2=new File("aaa");
+//        //mkdir创建文件夹，返回是否创建成功
+//        System.out.println("创建文件夹"+file2.mkdir());
+//        //文件如果存在，那么不会创建，就返回false
+//        //创建多级目录
+//        File file3 =new File("bbb\\cccc");
+//        System.out.println("创建多级文件夹"+file3.mkdir());
+        //删除,只能删除空的文件夹
+        File file = new File("demo1.TEXT");
+        System.out.println("删除文件" + file.delete());//删除了回收站都没有
+        File file2 = new File("aaa");
+        System.out.println("删除目录："+file2.delete());
+        File file3 =new File("bbb\\cccc");
+        System.out.println("删除多级目录"+file3.delete());
+    }
+}
