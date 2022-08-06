@@ -1,0 +1,17 @@
+//继承关系中父子类的异常
+public class demo07_Fu_zi_exception {
+}
+class fu{
+    //父类抛出空指针异常，空指针和越界都是RuntimeException的子类，因此
+    //父类也可以抛出RuntimeException异常
+    public void show()throws NullPointerException{
+        System.out.println("show");
+    }
+}
+class zi extends fu {
+    //子类抛出下标越界异常,或者是空指针异常，必须是父类子类或者非子父关系的异常
+    @Override//只需要写一个show即可
+    public void show() throws RuntimeException {
+        super.show();
+    }
+}
