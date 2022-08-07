@@ -1,0 +1,22 @@
+//file批量获取
+public class demo15_File_Get_it_in_bulk {
+    public static void main(String[] args) {
+        File file = new File("E:\\java");
+        File[] files = file.listFiles();//因为一个文件夹下可能有很多文件，所以返回数组。
+        //遍历数组，此种方法返回的是各个文件的地址
+        for (File file1 : files) {
+
+            if (file1.isFile()) {
+                System.out.println("是文件：" + file1.getName());
+            } else {
+                System.out.println("是文件夹：" + file1.getName());
+            }
+            System.out.println(files);
+        }
+            //此种方法返回的是具体内容
+            String[] file3 = file.list();
+            for (String s : file3) {
+                System.out.println(s);
+            }
+        }
+    }
