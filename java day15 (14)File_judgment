@@ -1,0 +1,20 @@
+//file判断功能
+public class demo14_File_judgment {
+    public static void main(String[] args) {
+        File file=new File("E:\\java\\Day15\\录屏");
+        //判断是否是文件夹
+        System.out.println("是否是文件夹："+file.isDirectory());
+        File file2=new File("E:\\java\\Day15\\录屏");
+        //判断是否是文件
+        System.out.println("是否是文件："+file2.isFile());
+        //判断是否存在
+        System.out.println("是否存在："+file2.exists());
+        //是否可读
+        System.out.println("是否可读："+file2.canRead());
+        //是否可写
+        System.out.println("是否可写："+file2.canWrite());
+        //是否隐藏
+        System.out.println("是否隐藏："+file2.isHidden());
+
+    }
+}
