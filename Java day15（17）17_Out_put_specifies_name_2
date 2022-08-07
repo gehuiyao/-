@@ -1,0 +1,26 @@
+//遍历了所有文件夹里的所有文件！！！！！
+//输出指定目录下的指定后缀名的文件名称（多层目录）
+public class demo17_Out_put_specifies_name_2 {
+    public static void main(String[] args) {
+        File file=new File("E:\\java");
+        listfiles(file);//列出E:\java下的所有内容
+    }//打印所有文件的方法
+    public  static void listfiles(File file){
+        //获取所有的文件、文件夹列表
+        File[] files=file.listFiles();
+        if(files!=null){
+            //遍历E:\java里面的每个项目,如果是个文件并且后缀名是.txt就直接输出
+            for (File f : files) {
+                if(f.isFile()){
+                    if(f.getName().endsWith(".txt")){
+                        System.out.println(f.getAbsoluteFile());
+                    }
+                }
+                else {//如果是个文件夹，进入文件夹后进行遍历
+                    listfiles(f);//如果是目录，继续遍历
+                }
+            }
+
+        }
+    }
+}
