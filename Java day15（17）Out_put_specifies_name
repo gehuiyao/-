@@ -1,0 +1,16 @@
+//输出指定目录下的指定后缀名的文件名称（当前目录）
+public class demo17_Out_put_specifies_name {
+    public static void main(String[] args) {
+        File file=new File("E:\\java");
+        //使用了匿名内部类
+       File[] files= file.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.isFile()&&pathname.getName().endsWith(".txt");//如果是文件并且名称后缀是。。
+            }
+        });
+       for (File f:files){
+           System.out.println(f.getAbsoluteFile());//获取名称
+       }
+    }
+}
