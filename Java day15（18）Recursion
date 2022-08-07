@@ -1,0 +1,17 @@
+//递归
+/**自己调用自己
+ * 必要条件：递归需要退出
+ */
+public class demo18_Recursion {
+    public static void main(String[] args) {
+    int sum= getsum(5);
+        System.out.println(sum);
+    }
+    public static int getsum(int n ){
+        if(n==1){
+            return 1;
+        }
+        //在自己定义的方法内使用自己
+        return  n+getsum(n-1);//主要是结束条件
+    }
+}
