@@ -1,0 +1,15 @@
+//IO流概述和继承结构：字节输出流概述
+public class demo01_IO_and_Inheritance_structure {
+    public static void main(String[] args) throws Exception {
+        //Ctrl+p提示参数，如果文件不存在，会自动创建文件
+        FileOutputStream fos=new FileOutputStream("aaa.text");
+        //抛出异常
+       // fos.write(97);//ascll码值，输出a
+        //输出数组的数据,不管原来有什么，最后就只剩abc了
+        byte[] bytes={97,98,99};
+        fos.write(bytes);
+        //关闭流
+        fos.close();
+        System.out.println("程序结束");
+    }
+}
