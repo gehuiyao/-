@@ -1,0 +1,14 @@
+//字节输出流的使用,文件的续写
+public class demo02_Use_byte_output_stream {
+    public static void main(String[] args) throws Exception {
+        //第二个参数，是否续写
+        FileOutputStream fos=new FileOutputStream("aaa.text",true);
+        fos.write(100);
+        fos.close();
+//        File file=new File("aaa.text");
+//        FileOutputStream fos2=new FileOutputStream(file);
+        //使用匿名对象创建
+      //  FileOutputStream fos2=new FileOutputStream(new File("aaa.text"));
+        System.out.println("程序结束");
+    }
+}
