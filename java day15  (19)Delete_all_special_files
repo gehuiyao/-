@@ -1,0 +1,29 @@
+/**file.delete:删除文件夹或者目录，但是文件夹必须是空空的
+ * 遍历文件夹，先删除文件夹里面的文件，再删除文件夹
+ * 思路：
+ * 封装路径为File对象
+ * 判断File是否为空
+ * 判断file是否为文件，
+ *    是文件：直接删除
+ *    不是文件：遍历文件夹，获取文件夹的所有文件列表
+ */
+public class demo19_Delete_all_special_files {
+    public static void main(String[] args) {
+        File file = new File("E:\\java\\Day15\\录屏\\新建文件夹");//创建File对象file
+        deletfile(file);//对file调用deletefile方法
+    }
+    public static void deletfile(File file) {
+        if (file == null) {
+            return;
+        }
+        if(file.isFile()){
+            file.delete();//删除文件
+        }else {
+            File[] files= file.listFiles();//获取文件夹内容列表
+            for (File f : files) {
+                deletfile(f);//进入文件夹内，调用自己，如果是文件就删掉，是文件夹就再进入一层
+            }//删除目录
+            file.delete();
+        }
+    }
+}
