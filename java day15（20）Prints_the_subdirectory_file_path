@@ -1,0 +1,17 @@
+//打印所有子目录的文件路径
+public class demo20_Prints_the_subdirectory_file_path {
+    public static void main(String[] args) {
+        File file = new File("E:\\java\\Day15\\录屏");//创建file对象
+        printFile(file);//调用方法
+    }
+    public static void printFile(File file) {
+        if (file.isFile()) {//如果是个文件就直接输出
+            System.out.println("文件路径" + file.getAbsoluteFile());
+        } else {//如果是个文件夹，遍历所有文件
+            File[] file1 = file.listFiles();//这句话就是用来表示文件夹下面的文件de
+            for (File f : file1) {
+                printFile(f);//调用自己
+            }
+        }
+    }
+}
