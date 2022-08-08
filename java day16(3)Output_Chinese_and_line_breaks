@@ -1,0 +1,15 @@
+//字节输出流：输出中文以及换行
+public class demo03_Output_Chinese_and_line_breaks {
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fos=new FileOutputStream("aaa.text",true);
+            //你好string---->byte
+            fos.write("你好".getBytes());//自动将string转为byte并未写入文件中
+            fos.write ("\r\n".getBytes());
+            fos.write("你好".getBytes());
+            fos.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
