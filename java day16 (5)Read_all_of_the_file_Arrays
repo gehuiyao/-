@@ -1,0 +1,26 @@
+//读取文件的所有内容：缓冲数组
+public class demo05_Read_all_of_the_file_Arrays {
+    public static void main(String[] args) throws Exception {
+        FileInputStream fis=new FileInputStream("aaa.text");
+        byte[]bytes=new byte[2];
+       //将读取到的数据存放到数组中，返回读取到的数据的个数
+        int count=fis.read(bytes);
+        System.out.println(count);
+        //组名直接打印数组数据和直接使用toString方法都只能打印出数组的地址，都是不可取的。
+        //因此需要使用Arrays的toString方法来打印数组中的数据
+        System.out.println(Arrays.toString(bytes));//打印出数组中的数据,放在了一个数组中
+        //遍历输出数组中的内容
+        while (count!=-1){//如果数组里面还有内容
+            System.out.println(Arrays.toString(bytes));//输出内容
+            count=fis.read(bytes);//继续读取。
+        }
+        //写法2=================================
+        System.out.println("=========================");
+        int coun=0;
+        while ((coun= fis.read(bytes))!=-1){//coun=fis调用read方法读取数据并
+            //读取到的数据存放在数组里
+            System.out.println(Arrays.toString(bytes));
+            //输出数组里的内容
+        }
+    }
+}
