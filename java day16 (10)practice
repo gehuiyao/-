@@ -1,0 +1,39 @@
+**统计一个文件中：字母出现的次数
+ * 如果有文件char.text，内容为：aaabbbcccdddeeefff
+ * 实现思路：
+ * 1.读取文件，将文件内容保存到string类型的变量中
+ * 2.使用MapJ喝的特性，完成统计功能
+ */
+public class demo08_Practice {
+    public static void main(String[] args) throws  Exception{
+//        //将所有的内容都读取到，之后遍历。
+//        FileInputStream fis=new FileInputStream("char.text");
+//        byte[] bytes=new byte[10];
+//        int count=0;
+//        //将读取到的内容封装为string
+//        StringBuffer sb=new StringBuffer();
+//        while ((count=fis.read(bytes))!=-1){//定义file为fis读取到的数组里的内容
+//            //拼接
+//            sb.append(new String(bytes,0,count));//从第0个读取到的一直拼接到count个
+//            //TreeMap提供了一种以排序顺序存储键/值对的有效方法
+//            TreeMap<Character,Integer> treemap=new TreeMap<>();//键，值
+//            //遍历字符串,toCharArray() 方法将字符串转换为字符数组。
+//            for (char c : sb.toString().toCharArray()) {
+//                //进行统计,containsKey(c)？意思是包含某个值吗
+//                treemap.put(c,treemap.containsKey(c)?treemap.get(c)+1:1);
+//            }
+//            System.out.println(treemap);
+//        }
+        //变读取边统计
+        TreeMap<Character,Integer> treemap=new TreeMap<>();//创建对象
+        FileInputStream fis=new FileInputStream("char.text");
+        int n=0;
+        while ((n=fis.read())!=-1){//读文件
+        //将ascll码转为字母
+            char c=(char) n;
+            treemap.put(c,treemap.containsKey(c) ?  treemap.get(c)+1:1);
+        }
+        System.out.println(treemap);
+
+    }
+}
