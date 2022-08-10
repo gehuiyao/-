@@ -1,0 +1,17 @@
+/**边读取边输出
+ * 数组缓冲区
+ */
+public class demo04_Copy_file_Arrays {
+    public static void main(String[] args) throws IOException {
+        FileInputStream fis=new FileInputStream("1.text");
+        FileOutputStream fos=new FileOutputStream("aaa.text");
+        byte[]bytes=new byte[4];//开辟数组空间
+       int count= 0;
+       while ((count= fis.read(bytes))!=-1){//读取数组里的内容
+           fos.write(bytes,0,count);//将数组写入,只写读取到的内容
+       }
+       fos.close();
+       fis.close();
+        System.out.println("复制成功");
+    }
+}
