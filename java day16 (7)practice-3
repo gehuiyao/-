@@ -1,0 +1,32 @@
+/复制指定路径的文件
+public class demo05_Copy_specifal_file {
+    public static void main(String[] args) throws Exception {
+        File file = getFile();
+        FileInputStream fis = new FileInputStream(file);
+        FileOutputStream fos = new FileOutputStream(file.getName());//返回给定文件对象的名称。
+        byte[] bytes = new byte[10];//创建对象
+        int count = 0;
+        while ((count = fis.read(bytes)) != -1) {//当有内容时，读取数组
+            fos.write(bytes, 0, count);//从第0个开始，写入count个总府到数组里
+        }
+        fos.close();
+        fis.close();
+        System.out.println("复制完毕！");
+    }
+    //获取文件
+    public static File getFile() {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("请输入一个 文件路径");
+            String path = sc.next();
+            File file = new File(path);
+            if (!file.exists()) {
+                System.out.println("输入的路径不存在");
+            } else if (file.isDirectory()) {
+                System.out.println("输入的路径必须是文件！");
+            } else {
+                return file;
+            }
+        }
+    }
+}
