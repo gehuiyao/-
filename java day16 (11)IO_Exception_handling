@@ -1,0 +1,25 @@
+//IO流异常处理
+public class dmeo06_IO_Exception_handling {
+    public static void main(String[] args) {
+        FileOutputStream fos=null;
+        try {
+          fos=new FileOutputStream("aaa.text");
+            fos.write(97);//又添加一个catch
+            //如果在此处发生异常，后面的代码不会执行,那输出流无法关闭
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {//必须执行，但是初始化fos可能会报错，因此再try catch一下
+            //又报错，再catch
+            try {
+                if(fos!=null) {
+                    fos.close();
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            //无论如何都会执行
+        }
+    }
+}
