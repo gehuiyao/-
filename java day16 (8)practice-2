@@ -1,0 +1,19 @@
+/**复制文件1.text到aaa.text
+ *边读取边输出
+ */
+public class demo04_copy_file_char {
+    public static void main(String[] args) throws Exception {
+        FileOutputStream fos=new FileOutputStream("aaa.text");
+//两个对象都创建
+        FileInputStream fis=new FileInputStream("1.text");//输入
+       int n=0;
+       while ((n=fis.read())!=-1){//读取到一个字节
+           fos.write(n);//将读取到的字节写入到另一个文件中
+           //关闭流，后打开的先关闭
+       }
+        fos.close();
+        fis.close();
+        System.out.println("复制完毕");
+
+    }
+}
