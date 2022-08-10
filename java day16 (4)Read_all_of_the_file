@@ -1,0 +1,23 @@
+//读取文件的全部内容（一次读取多个内容）：单个字符
+public class demo04_Read_all_of_the_file  {
+    public static void main(String[] args) throws Exception {
+        FileInputStream  fis=new FileInputStream("aaa.text");
+        //返回读取到的数据，若没有数据返回-1，使用循环读取所有内容
+        //写法1，但是写法复杂
+//        System.out.println(fis.read());
+//        int  n=fis.read();
+//        while (n!=-1){
+//            System.out.print((char)n );
+//            n=fis.read();//重新赋值
+//        }
+//        fis.close();
+//        System.out.println("程序结束");
+    //   System.out.println("==========================");
+        //写法2：将赋值语句放入判断条件里面
+        int n=0;
+         while ((n=fis.read())!=-1){
+             System.out.print((char) n);
+         }
+         fis.close();
+    }
+}
