@@ -1,0 +1,12 @@
+//自动关闭IO流
+public class demo05_IO_Close {
+    public static void main(String[] args) {
+        //try后面加个括号，将创建对象的语句输入括号里
+        //流使用完会自动关闭。
+        try (FileInputStream fis=new FileInputStream("1.txt")){
+            System.out.println(fis.read());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
