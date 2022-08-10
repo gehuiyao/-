@@ -1,0 +1,22 @@
+**摩卡：30
+ * 卡布奇诺：23
+ * 拿铁：27
+ * 香草：49
+ */
+public class demo10_practice_2 {
+    public static void main(String[] args) throws Exception {
+        Map<String,Integer> map=new LinkedHashMap<>() ;
+        FileInputStream fis=new FileInputStream("aaa.text");
+       byte[]bytes=new byte[1024];//创建数组，开辟空间
+        int coun=fis.read(bytes);//将fis对象里的内容存放到数组中
+        String str=new String(bytes,0,coun);//从第0个开始取count个
+       //拿到每一行的数据
+        String[]lins=str.split("\r\n");//分割每行的内容
+        for(String line:lins){
+            String[] l=line.split("=");//将按照换行分割的内容再按照等号分割
+          //  String---int Integer
+            map.put(l[0],Integer.parseInt(l[1]));
+        }
+        System.out.println(map);
+    }
+}
