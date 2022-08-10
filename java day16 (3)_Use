@@ -1,0 +1,12 @@
+//使用字节输入流
+public class demo03_Use {
+    public static void main(String[] args) throws Exception {
+        FileInputStream fis=new FileInputStream("aaa.text");
+        //读取text里面的数据,一个语句只读一个字符，后面再读取往后继续
+        //每次执行都是从头开始读。默认是int类型，可以强转
+        System.out.println((char)fis.read());//强转了，记住格式
+        System.out.println(fis.read());
+        System.out.println(fis.read());
+        fis.close();
+    }
+}
