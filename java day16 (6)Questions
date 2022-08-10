@@ -1,0 +1,15 @@
+//上一次项目中由于读取了数组的长度是一定的，导致可能会
+//多读取数据，重复输出，覆盖不充分。
+public class dmeo05_Questions {
+    public static void main(String[] args) throws IOException {
+        FileInputStream fis=new FileInputStream("text");
+        byte[]bytes=new byte[2];
+        int count=0;
+        while ((count=fis.read(bytes))!=-1){
+            //解决问题
+            String s=new String(bytes,0,count);//表示从0开始读取，读取count个
+            System.out.println(s);
+        }
+        fis.close();
+    }
+}
